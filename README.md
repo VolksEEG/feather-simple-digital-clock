@@ -19,5 +19,11 @@
   This is currently uses a simple/crummy algorithm -- every time the 
   main loop runs we check to see if sufficient time has passed to change 
   the output. As the loop seems to run roughly 1-2x per mSec, this limits 
-  accuracy and max frequency. Would be much better to update this to use a 
+  accuracy and max frequency. For example, the image below is the square wave
+  output with PERIOD_MICROSEC set to 10000, which should give us 100Hz output 
+  but only yields 99 (see upper-right of screen).
+  
+  ![Should be 100Hz, but only 99](https://github.com/VolksEEG/feather-simple-digital-clock/blob/master/100Hz-ish%20signal.PNG)
+  
+  Would be much better to update this to use a 
   hardware timer interrupt...
